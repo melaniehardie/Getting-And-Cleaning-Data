@@ -80,7 +80,7 @@ run_analysis <- function() {
     # get the train feature data and subset on the rows in desiredColumns
     trainData <- read.table("./SamsungDataset/train/X_train.txt")
     trainDataSubset <- subset(trainData, select=desiredColumns$V1)
-    # add the colum names
+    # add the column names
     colnames(trainDataSubset) <- desiredColumns$V2
     
     # read in the files that contains the subject identifiers
@@ -88,7 +88,7 @@ run_analysis <- function() {
     trainSubjects <- read.table("./SamsungDataset/train/subject_train.txt")
     testSubjects <- read.table("./SamsungDataset/test/subject_test.txt")
     
-    # create a train table with the subject identifier in the first colum
+    # create a train table with the subject identifier in the first column
     # and activity in the second colunm
     resultTrain <- cbind(trainSubjects,activityDataTrain$V1)
     # create a third column representin the trial (TRAIN or TEST)
@@ -103,10 +103,10 @@ run_analysis <- function() {
     # get the test feature data and subset on the rows in desiredColumns
     testData <- read.table("./SamsungDataset/test/X_test.txt")
     testDataSubset <- subset(testData, select=desiredColumns$V1)
-    # add the colum names
+    # add the column names
     colnames(testDataSubset) <- desiredColumns$V2
 
-    # create a test table with the subject identifier in the first colum
+    # create a test table with the subject identifier in the first column
     # and activity in the second colunm
     resultTest <- cbind(testSubjects,activityDataTest$V1)
     # create a third column representin the trial (TRAIN or TEST)
